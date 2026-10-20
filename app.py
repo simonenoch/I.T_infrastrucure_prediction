@@ -36,7 +36,7 @@ HORIZON_SECONDS = 3600
 BASE_DIR = Path(__file__).resolve().parent
 
 st.title("🖥️ IT Infrastructure Failure Prediction")
-st.caption("A student-friendly machine-learning demo for predicting recorded server hardware-error events.")
+st.caption("A machine_learning system for predicting server hardware failures.")
 
 with st.expander("About this project and how to defend it", expanded=False):
     st.markdown(
