@@ -38,25 +38,6 @@ BASE_DIR = Path(__file__).resolve().parent
 st.title("🖥️ IT Infrastructure Failure Prediction")
 st.caption("A machine_learning system for predicting server hardware failures.")
 
-with st.expander("About this project and how to defend it", expanded=False):
-    st.markdown(
-        """
-        **Problem:** use recent server workload measurements to estimate whether the same machine
-        has a recorded hardware-error event in the next hour.
-
-        **Model:** a Random Forest classifier. Missing feature values are filled with the median
-        using a scikit-learn pipeline.
-
-        **Input features:** CPU, memory and disk utilization, plus 1-, 5- and 15-minute load averages.
-
-        **Important dataset note:** the supplied event file labels the relevant event type as
-        `softerror`. This app follows that label from the provided trace. It does not claim to
-        predict every real-world hardware failure.
-
-        **Limitations:** this is an educational baseline, not a production monitoring system.
-        Predictions are estimates and should not be used alone to make operational decisions.
-        """
-    )
 
 @st.cache_data(show_spinner=False)
 def load_training_data(usage_path: str, event_path: str) -> pd.DataFrame:
